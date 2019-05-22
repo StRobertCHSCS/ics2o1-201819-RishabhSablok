@@ -32,7 +32,10 @@ def on_update(delta_time):
 def on_draw():
     arcade.start_render()
     # Draw in here...
-    arcade.draw_rectangle_filled(center_x, center_y, RECT_WIDTH, RECT_HEIGHT, arcade.color.ALIZARIN_CRIMSON)
+    texture = arcade.load_texture("images/spaceRockets_001.png")
+    scale = .1
+    arcade.draw_texture_rectangle(center_x, center_y, scale * texture.width, scale * texture.height, texture, 0)
+    # arcade.draw_rectangle_filled(center_x, center_y, RECT_WIDTH, RECT_HEIGHT, arcade.color.ALIZARIN_CRIMSON)
 
 
 def on_key_press(key, modifiers):
