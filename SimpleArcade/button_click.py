@@ -14,7 +14,7 @@ WIDTH = 640
 HEIGHT = 480
 
 # There are better ways to represent buttons
-my_button = [100, 200, 150, 50]  # x, y, width, height
+my_button = [200, 200, 50, 50]  # x, y, width, height
 
 
 def on_update(delta_time):

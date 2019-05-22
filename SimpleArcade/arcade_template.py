@@ -12,7 +12,7 @@ def on_update(delta_time):
 def on_draw():
     arcade.start_render()
     # Draw in here...
-    arcade.draw_circle_filled(100, 100, 25, arcade.color.BLUE)
+    arcade.draw_circle_filled(320, 240, 25, arcade.color.BLUE)
 
 
 def on_key_press(key, modifiers):
@@ -29,7 +29,7 @@ def on_mouse_press(x, y, button, modifiers):
 
 def setup():
     arcade.open_window(WIDTH, HEIGHT, "My Arcade Game")
-    arcade.set_background_color(arcade.color.WHITE)
+    arcade.set_background_color(arcade.color.INDIAN_YELLOW)
     arcade.schedule(on_update, 1/60)
 
     # Override arcade window methods

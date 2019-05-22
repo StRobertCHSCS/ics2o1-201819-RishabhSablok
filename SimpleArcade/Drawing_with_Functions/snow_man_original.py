@@ -9,17 +9,17 @@ def draw_grass():
     arcade.draw_lrtb_rectangle_filled(0, WIDTH, HEIGHT / 3, 0, arcade.color.AIR_SUPERIORITY_BLUE)
 
 
-def draw_snow_person():
+def draw_snow_person(x, y):
     """ Draw a snow person """
 
     # Snow
-    arcade.draw_circle_filled(300, 200, 60, arcade.color.WHITE)
-    arcade.draw_circle_filled(300, 280, 50, arcade.color.WHITE)
-    arcade.draw_circle_filled(300, 340, 40, arcade.color.WHITE)
+    arcade.draw_circle_filled(300 + x, 200 + y, 60, arcade.color.WHITE)
+    arcade.draw_circle_filled(300 + x, 280 + y, 50, arcade.color.WHITE)
+    arcade.draw_circle_filled(300 + x, 340 + y, 40, arcade.color.WHITE)
 
     # Eyes
-    arcade.draw_circle_filled(285, 350, 5, arcade.color.BLACK)
-    arcade.draw_circle_filled(315, 350, 5, arcade.color.BLACK)
+    arcade.draw_circle_filled(285 + x, 350 + y, 5, arcade.color.BLACK)
+    arcade.draw_circle_filled(315 + x, 350 + y, 5, arcade.color.BLACK)
 
 
 def on_update(delta_time):
@@ -31,8 +31,9 @@ def on_draw():
     # Draw in here...
     # Draw the ground
     draw_grass()
-    draw_snow_person()
-
+    draw_snow_person(0,0)
+    draw_snow_person(100, 0)
+    draw_snow_person(200, 00)
 
 def on_key_press(key, modifiers):
     pass
