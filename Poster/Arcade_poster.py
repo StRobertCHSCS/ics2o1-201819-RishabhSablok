@@ -8,7 +8,7 @@ RECT_HEIGHT = 50
 
 
 center_x = 100      # Initial x position
-center_y = 50       # Initial y position
+center_y = 100       # Initial y position
 delta_x = 3       # change in x
 delta_y = 1      # change in y
 
@@ -53,7 +53,10 @@ def on_draw():
     arcade.draw_rectangle_outline(300, 300, 595, 595, arcade.color.BLACK, border_width=5)
     texture = arcade.load_texture("Cops.png")
     arcade.draw_texture_rectangle(center_x, center_y, 0.08 * texture.width, 0.08 * texture.height, texture, 0)
-#    arcade.draw_text("If you cybe",center_x, center_y,arcade.color)
+    arcade.draw_text("If you bully", center_x - 30, center_y - 65, arcade.color.BLACK)
+    arcade.draw_text("him I will", center_x - 30, center_y - 80, arcade.color.BLACK)
+    arcade.draw_text("Bully you !!!", center_x - 30, center_y - 95, arcade.color.BLACK)
+
 
 def on_key_press(key, modifiers):
     pass
