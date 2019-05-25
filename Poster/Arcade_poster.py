@@ -1,8 +1,8 @@
 import arcade
 
 
-WIDTH = 600
-HEIGHT = 600
+WIDTH = 6000
+HEIGHT = 6000
 RECT_WIDTH = 50
 RECT_HEIGHT = 50
 
@@ -10,7 +10,7 @@ RECT_HEIGHT = 50
 center_x = 100      # Initial x position
 center_y = 150       # Initial y position
 delta_x = 3       # change in x
-delta_y = 3      # change in y
+delta_y = 2      # change in y
 
 
 def on_update(delta_time):
@@ -24,7 +24,7 @@ def on_update(delta_time):
     if center_x < RECT_WIDTH // 2 or center_x > WIDTH - RECT_WIDTH // 2:
         delta_x *= -1
 
-    if center_y < RECT_HEIGHT // 2 + 70 or center_y > HEIGHT - RECT_HEIGHT // 2:
+    if center_y < RECT_HEIGHT // 2 + 70 or center_y > HEIGHT - RECT_HEIGHT // 2 - 20:
         delta_y *= -1
 
 
@@ -34,7 +34,7 @@ def on_draw():
 #    texture = arcade.load_texture("Back.jpg")
 #    arcade.draw_texture_rectangle(300, 300, texture.width*1.5, texture.height*1.5, texture, 0)
     # Draw in here...
-    arcade.draw_text("No Cyber-Bullying", 100, 450, arcade.color.BLACK, font_size=40)
+    arcade.draw_text("No Cyber-Bullying", 120, 450, arcade.color.BLACK, font_size=35)
     arcade.draw_circle_filled(600, 0, 280, arcade.color.DARK_BLUE)
     texture = arcade.load_texture("Computer.png")
     scale = 0.3
@@ -52,12 +52,23 @@ def on_draw():
     arcade.draw_text("REGRET IT", 12, 70, arcade.color.BOLE, font_size=15)
     arcade.draw_rectangle_outline(300, 300, 595, 595, arcade.color.BLACK, border_width=5)
     texture = arcade.load_texture("Mean.jpg")
-    arcade.draw_texture_rectangle(540, 500, 0.6 * texture.width, 0.6 * texture.height, texture)
+    arcade.draw_texture_rectangle(530, 500, 0.6 * texture.width, 0.6 * texture.height, texture)
+    arcade.draw_rectangle_filled(550, 350, 100, 100, arcade.color.BISQUE)
+    arcade.draw_text("Click to learn ", 505, 380, arcade.color.BISTRE, font_size=13)
+    arcade.draw_text("more about", 505, 360, arcade.color.BISTRE, font_size=13)
+    arcade.draw_text("how bullying", 505, 340, arcade.color.BISTRE, font_size=13)
+    arcade.draw_text("affects others", 505, 320, arcade.color.BISTRE, font_size=13)
+    texture = arcade.load_texture("NO.jpg")
+    arcade.draw_texture_rectangle(60, 420, 0.6 * texture.width, 0.6 * texture.height, texture)
+    texture = arcade.load_texture("Words.jpg")
+    arcade.draw_texture_rectangle(60, 275, 0.6 * texture.width, 0.6 * texture.height, texture)
+
     texture = arcade.load_texture("Cops.png")
     arcade.draw_texture_rectangle(center_x, center_y, 0.08 * texture.width, 0.08 * texture.height, texture, 0)
     arcade.draw_text("If you bully", center_x - 30, center_y - 65, arcade.color.BLACK)
     arcade.draw_text("him I will", center_x - 30, center_y - 80, arcade.color.BLACK)
     arcade.draw_text("Bully you !!!", center_x - 30, center_y - 95, arcade.color.BLACK)
+
 
 def on_key_press(key, modifiers):
     pass
