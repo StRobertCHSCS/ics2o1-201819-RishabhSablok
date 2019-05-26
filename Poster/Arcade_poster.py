@@ -1,16 +1,22 @@
 import arcade
+import ctypes
 
-
-WIDTH = 6000
-HEIGHT = 6000
+WIDTH = 600
+HEIGHT = 600
 RECT_WIDTH = 50
 RECT_HEIGHT = 50
 
 
 center_x = 100      # Initial x position
 center_y = 150       # Initial y position
-delta_x = 3       # change in x
-delta_y = 2      # change in y
+delta_x = 3.5       # change in x
+delta_y = 2.5      # change in y
+
+my_button = [500, 300, 100, 100]  # x, y, width, height
+
+
+def Mbox(title, text, style):
+    return ctypes.windll.user32.MessageBoxW(0, text, title, style)
 
 
 def on_update(delta_time):
@@ -53,7 +59,7 @@ def on_draw():
     arcade.draw_rectangle_outline(300, 300, 595, 595, arcade.color.BLACK, border_width=5)
     texture = arcade.load_texture("Mean.jpg")
     arcade.draw_texture_rectangle(530, 500, 0.6 * texture.width, 0.6 * texture.height, texture)
-    arcade.draw_rectangle_filled(550, 350, 100, 100, arcade.color.BISQUE)
+    arcade.draw_xywh_rectangle_filled(my_button[0], my_button[1], my_button[2], my_button[3], arcade.color.BISQUE)
     arcade.draw_text("Click to learn ", 505, 380, arcade.color.BISTRE, font_size=13)
     arcade.draw_text("more about", 505, 360, arcade.color.BISTRE, font_size=13)
     arcade.draw_text("how bullying", 505, 340, arcade.color.BISTRE, font_size=13)
@@ -79,7 +85,15 @@ def on_key_release(key, modifiers):
 
 
 def on_mouse_press(x, y, button, modifiers):
-    pass
+    my_button_x, my_button_y, my_button_w, my_button_h = my_button
+
+    # Need to check all four limits of the button.
+    if (x > my_button_x and x < my_button_x + my_button_w and y > my_button_y and y < my_button_y + my_button_h):
+        print("One-third of all kids have been a victim of cyber bullying.\n\nTen to 20 percent of these youth experience this abuse on a continuous basis.\n\nThe most typical forms of bullying online include disrespecting or ignoring the presence of another.\n\nFifty percent of all teens have been exposed to teen cyber abuse, such being a victim, witness, or offender of cyber abuse.\n\n____________________________________________________________________________________________________________________________________________________________________________________")
+        Mbox('More Info', 'One-third of all kids have been a victim of cyber bullying.\n\nTen to 20 percent of these youth experience this abuse on a continuous basis.\n\nThe most typical forms of bullying online include disrespecting or ignoring the presence of another.\n\nFifty percent of all teens have been exposed to teen cyber abuse, such being a victim, witness, or offender of cyber abuse.', 0)
+
+    else:
+        print("not clicked")
 
 
 def setup():
