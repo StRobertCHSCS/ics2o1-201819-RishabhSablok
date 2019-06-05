@@ -1,8 +1,8 @@
 import arcade
 
 
-WIDTH = 640
-HEIGHT = 480
+WIDTH = 600
+HEIGHT = 600
 
 
 def on_update(delta_time):
