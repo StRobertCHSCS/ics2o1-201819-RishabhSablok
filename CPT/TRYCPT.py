@@ -40,7 +40,7 @@ def function1():
     print("Q5: Which of the following malwares create fake FBI notifications.")
     print("1. Root Kit")
     print("2. Ransomware")
-    print("3. Backdoors")
+    print("3. Backdoor")
     print("4. Rouge Security Software")
     b = int(input("Enter answer(1 - 4): "))
     while b != 1 or b != 2 or b != 3 or b != 4:
